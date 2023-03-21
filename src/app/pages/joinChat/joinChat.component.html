@@ -1,0 +1,32 @@
+<div class="join-container">
+  <header class="join-header">
+    <h1><i class="fas fa-smile"></i> Socket.io</h1>
+  </header>
+  <main class="join-main">
+    <form>
+      <div class="form-control">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username..."
+          required
+          [(ngModel)]="username"
+        />
+      </div>
+      <div class="form-control">
+        <label for="room">Room</label>
+        <select name="room" id="room" [(ngModel)]="room" (selectionchange)="updatedSelectRoom($event)">
+          <option value="Chinese">Chinese</option>
+          <option value="History">History</option>
+          <option value="Science">Science</option>
+          <option value="Music">Music</option>
+          <option value="Geography">Geography</option>
+          <option value="Software">Software</option>
+        </select>
+      </div>
+      <button (click)="connectSocket()" class="btn">Join Classroom</button>
+    </form>
+  </main>
+</div>
